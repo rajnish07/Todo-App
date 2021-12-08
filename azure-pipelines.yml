@@ -15,7 +15,6 @@ stages:
               ChangeRequestNumber: 'CHG0030612'
               NewStatus: 'Implement'
               WorkNotes: 'Implementation Started'
-              otherParameters: '{"u_close_notes": "succeeded" }'
           - task: UpdateServiceNowChangeRequest@2
             displayName: 'Update ServiceNow Change Request'
             inputs:
@@ -23,6 +22,13 @@ stages:
               ChangeRequestNumber: 'CHG0030612'
               UpdateStatus: false
               WorkNotes: 'Release for creation of storage account'
+          - task: UpdateServiceNowChangeRequest@2
+            displayName: 'Update ServiceNow Change Request'
+            inputs:
+              ServiceNowConnection: 'SNConn'
+              ChangeRequestNumber: 'CHG0030612'
+              NewStatus: 'Review'
+              WorkNotes: 'Review Started'
           - task: UpdateServiceNowChangeRequest@2
             displayName: 'Close ServiceNow change [Successfull]'
             inputs:
