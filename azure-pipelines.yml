@@ -13,7 +13,7 @@ stages:
             inputs:
               ServiceNowConnection: 'SNConn'
               ChangeRequestNumber: 'CHG0030395'
-              NewStatus: 'Review'
+              NewStatus: 'Closed'
               WorkNotes: 'sample notes'
               otherParameters: '{"u_close_notes": "succeeded" }'
 pool: server
