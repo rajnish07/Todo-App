@@ -12,7 +12,23 @@ stages:
             displayName: 'Close ServiceNow change [Successfull]'
             inputs:
               ServiceNowConnection: 'SNConn'
-              ChangeRequestNumber: 'CHG0030395'
+              ChangeRequestNumber: 'CHG0030610'
+              NewStatus: 'Implement'
+              WorkNotes: 'sample notes'
+              otherParameters: '{"u_close_notes": "succeeded" }'
+          - task: UpdateServiceNowChangeRequest@2
+            displayName: 'Close ServiceNow change [Successfull]'
+            inputs:
+              ServiceNowConnection: 'SNConn'
+              ChangeRequestNumber: 'CHG0030610'
+              UpdateStatus: false
+              WorkNotes: 'sample notes'
+              otherParameters: '{"u_close_notes": "succeeded" }'
+          - task: UpdateServiceNowChangeRequest@2
+            displayName: 'Close ServiceNow change [Successfull]'
+            inputs:
+              ServiceNowConnection: 'SNConn'
+              ChangeRequestNumber: 'CHG0030610'
               NewStatus: 'Closed'
               WorkNotes: 'sample notes'
               otherParameters: '{"u_close_notes": "succeeded" }'
