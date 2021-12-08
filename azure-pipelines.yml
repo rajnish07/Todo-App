@@ -9,27 +9,26 @@ stages:
       - job: UpdateChangeRequest
         steps:
           - task: UpdateServiceNowChangeRequest@2
-            displayName: 'Close ServiceNow change [Successfull]'
+            displayName: 'Update ServiceNow Change Request'
             inputs:
               ServiceNowConnection: 'SNConn'
-              ChangeRequestNumber: 'CHG0030610'
+              ChangeRequestNumber: 'CHG0030612'
               NewStatus: 'Implement'
-              WorkNotes: 'sample notes'
+              WorkNotes: 'Implementation Started'
               otherParameters: '{"u_close_notes": "succeeded" }'
           - task: UpdateServiceNowChangeRequest@2
-            displayName: 'Close ServiceNow change [Successfull]'
+            displayName: 'Update ServiceNow Change Request'
             inputs:
               ServiceNowConnection: 'SNConn'
-              ChangeRequestNumber: 'CHG0030610'
+              ChangeRequestNumber: 'CHG0030612'
               UpdateStatus: false
-              WorkNotes: 'sample notes'
-              otherParameters: '{"u_close_notes": "succeeded" }'
+              WorkNotes: 'Release for creation of storage account'
           - task: UpdateServiceNowChangeRequest@2
             displayName: 'Close ServiceNow change [Successfull]'
             inputs:
               ServiceNowConnection: 'SNConn'
-              ChangeRequestNumber: 'CHG0030610'
+              ChangeRequestNumber: 'CHG0030612'
               NewStatus: 'Closed'
-              WorkNotes: 'sample notes'
-              otherParameters: '{"u_close_notes": "succeeded" }'
+              WorkNotes: 'Completed all tasks for stage 1 in release'
+              otherParameters: '{"u_status_reason":"successful", "u_work_start": "2021-12-07 02:00:00 UTC", "u_work_end": "2021-12-08 12:00:00 UTC", "u_close_code":"successful","u_close_notes":"Test closure notes"}'
 pool: server
